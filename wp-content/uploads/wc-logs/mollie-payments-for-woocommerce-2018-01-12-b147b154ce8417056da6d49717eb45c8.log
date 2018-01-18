@@ -1,0 +1,7 @@
+2018-01-12T08:46:35+00:00 DEBUG getApiPaymentMethods: Could not load Mollie methods (test): Unable to communicate with Mollie (28): Resolving timed out after 10524 milliseconds. (Mollie_API_Exception)
+2018-01-12T11:29:16+00:00 DEBUG getApiPaymentMethods: Could not load Mollie methods (test): Unable to communicate with Mollie (28): Resolving timed out after 10522 milliseconds. (Mollie_API_Exception)
+2018-01-12T11:32:54+00:00 DEBUG Mollie_WC_Helper_Data::deleteTransients: Mollie settings saved, delete transients
+2018-01-12T11:33:58+00:00 DEBUG Mollie_WC_Helper_Data::deleteTransients: Mollie settings saved, delete transients
+2018-01-12T11:37:50+00:00 DEBUG Mollie_WC_Helper_Data::deleteTransients: Mollie settings saved, delete transients
+2018-01-12T12:16:04+00:00 DEBUG Mollie_WC_Helper_Data::deleteTransients: Mollie settings saved, delete transients
+2018-01-12T14:33:30+00:00 DEBUG Mollie_WC_Helper_Data::deleteTransients: Mollie settings saved, delete transients

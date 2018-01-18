@@ -1,0 +1,2 @@
+2018-01-15T13:06:49+00:00 DEBUG getApiPaymentMethods: Could not load Mollie methods (test): Unable to communicate with Mollie (28): Resolving timed out after 10524 milliseconds. (Mollie_API_Exception)
+2018-01-15T13:06:51+00:00 DEBUG getApiPaymentMethods: Could not load Mollie methods (test): Unable to communicate with Mollie (6): Could not resolve host: api.mollie.nl. (Mollie_API_Exception)

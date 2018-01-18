@@ -1,0 +1,99 @@
+2018-01-12T11:43:13+00:00 CRITICAL Uncaught Error: Call to undefined function eregi() in /var/www/html/wp-content/plugins/woocommerce-pure-eft/classes/eft-payments-api.php:183
+Stack trace:
+#0 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-checkout.php(724): WC_Gateway_Pure_EFT->validate_fields()
+#1 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-checkout.php(968): WC_Checkout->validate_checkout(Array, Object(WP_Error))
+#2 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php(290): WC_Checkout->process_checkout()
+#3 /var/www/html/wp-includes/class-wp-hook.php(286): WC_Form_Handler::checkout_action('')
+#4 /var/www/html/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#5 /var/www/html/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#6 /var/www/html/wp-settings.php(471): do_action('wp_loaded')
+#7 /var/www/html/wp-config.php(94): require_once('/var/www/html/w...')
+#8 /var/www/html/wp-load.php(37): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-blog-header
+
+2018-01-12T11:44:12+00:00 CRITICAL Uncaught Error: Call to undefined function eregi() in /var/www/html/wp-content/plugins/woocommerce-pure-eft/classes/eft-payments-api.php:183
+Stack trace:
+#0 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-checkout.php(724): WC_Gateway_Pure_EFT->validate_fields()
+#1 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-checkout.php(968): WC_Checkout->validate_checkout(Array, Object(WP_Error))
+#2 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php(290): WC_Checkout->process_checkout()
+#3 /var/www/html/wp-includes/class-wp-hook.php(286): WC_Form_Handler::checkout_action('')
+#4 /var/www/html/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#5 /var/www/html/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#6 /var/www/html/wp-settings.php(471): do_action('wp_loaded')
+#7 /var/www/html/wp-config.php(94): require_once('/var/www/html/w...')
+#8 /var/www/html/wp-load.php(37): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-blog-header
+
+2018-01-12T11:45:53+00:00 CRITICAL Uncaught Error: Call to undefined function eregi() in /var/www/html/wp-content/plugins/woocommerce-pure-eft/classes/eft-payments-api.php:183
+Stack trace:
+#0 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-checkout.php(724): WC_Gateway_Pure_EFT->validate_fields()
+#1 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-checkout.php(968): WC_Checkout->validate_checkout(Array, Object(WP_Error))
+#2 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php(290): WC_Checkout->process_checkout()
+#3 /var/www/html/wp-includes/class-wp-hook.php(286): WC_Form_Handler::checkout_action('')
+#4 /var/www/html/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#5 /var/www/html/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#6 /var/www/html/wp-settings.php(471): do_action('wp_loaded')
+#7 /var/www/html/wp-config.php(94): require_once('/var/www/html/w...')
+#8 /var/www/html/wp-load.php(37): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-blog-header
+
+2018-01-16T16:18:06+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /var/www/html/wp-content/plugins/allow-php-in-posts-and-pages/allowphp.php(191) : eval()'d code:1
+Stack trace:
+#0 /var/www/html/wp-content/plugins/allow-php-in-posts-and-pages/allowphp.php(191): eval()
+#1 /var/www/html/wp-content/plugins/allow-php-in-posts-and-pages/allowphp.php(420) : eval()'d code(2): allow_php_in_posts::snippet_swap(1)
+#2 /var/www/html/wp-content/plugins/allow-php-in-posts-and-pages/allowphp.php(420): eval()
+#3 /var/www/html/wp-includes/class-wp-hook.php(286): allow_php_in_posts::shortcode_advanced('[woocommerce_ca...')
+#4 /var/www/html/wp-includes/plugin.php(203): WP_Hook->apply_filters('[woocommerce_ca...', Array)
+#5 /var/www/html/wp-includes/post-template.php(240): apply_filters('the_content', '[woocommerce_ca...')
+#6 /var/www/html/wp-content/themes/bellini/page.php(47): the_content()
+#7 /var/www/html/wp-includes/template-loader.php(74): include('/var/www/html/w...')
+#8 /var/www/html/wp-blog-header.php(19): require_on
+
+2018-01-16T16:18:18+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /var/www/html/wp-content/plugins/allow-php-in-posts-and-pages/allowphp.php(191) : eval()'d code:1
+Stack trace:
+#0 /var/www/html/wp-content/plugins/allow-php-in-posts-and-pages/allowphp.php(191): eval()
+#1 /var/www/html/wp-content/plugins/allow-php-in-posts-and-pages/allowphp.php(420) : eval()'d code(3): allow_php_in_posts::snippet_swap(1)
+#2 /var/www/html/wp-content/plugins/allow-php-in-posts-and-pages/allowphp.php(420): eval()
+#3 /var/www/html/wp-includes/class-wp-hook.php(286): allow_php_in_posts::shortcode_advanced('[woocommerce_ca...')
+#4 /var/www/html/wp-includes/plugin.php(203): WP_Hook->apply_filters('[woocommerce_ca...', Array)
+#5 /var/www/html/wp-includes/post-template.php(240): apply_filters('the_content', '[woocommerce_ca...')
+#6 /var/www/html/wp-content/themes/bellini/page.php(47): the_content()
+#7 /var/www/html/wp-includes/template-loader.php(74): include('/var/www/html/w...')
+#8 /var/www/html/wp-blog-header.php(19): require_on
+
+2018-01-16T16:42:28+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /var/www/html/wp-content/plugins/allow-php-in-posts-and-pages/allowphp.php(191) : eval()'d code:1
+Stack trace:
+#0 /var/www/html/wp-content/plugins/allow-php-in-posts-and-pages/allowphp.php(191): eval()
+#1 /var/www/html/wp-content/plugins/allow-php-in-posts-and-pages/allowphp.php(420) : eval()'d code(3): allow_php_in_posts::snippet_swap(1)
+#2 /var/www/html/wp-content/plugins/allow-php-in-posts-and-pages/allowphp.php(420): eval()
+#3 /var/www/html/wp-includes/class-wp-hook.php(286): allow_php_in_posts::shortcode_advanced('[woocommerce_ca...')
+#4 /var/www/html/wp-includes/plugin.php(203): WP_Hook->apply_filters('[woocommerce_ca...', Array)
+#5 /var/www/html/wp-includes/post-template.php(240): apply_filters('the_content', '[woocommerce_ca...')
+#6 /var/www/html/wp-content/themes/bellini/page.php(47): the_content()
+#7 /var/www/html/wp-includes/template-loader.php(74): include('/var/www/html/w...')
+#8 /var/www/html/wp-blog-header.php(19): require_on
+
+2018-01-16T16:46:02+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /var/www/html/wp-content/themes/bellini/woocommerce/cart/cart.php:144
+Stack trace:
+#0 /var/www/html/wp-content/plugins/woocommerce/includes/wc-core-functions.php(209): include()
+#1 /var/www/html/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-cart.php(87): wc_get_template('cart/cart.php')
+#2 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(76): WC_Shortcode_Cart::output(Array)
+#3 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(89): WC_Shortcodes::shortcode_wrapper(Array)
+#4 /var/www/html/wp-includes/shortcodes.php(319): WC_Shortcodes::cart('', '', 'woocommerce_car...')
+#5 [internal function]: do_shortcode_tag(Array)
+#6 /var/www/html/wp-includes/shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ca...')
+#7 /var/www/html/wp-includes/class-wp-hook.php(286): do_shortcode('[woocommerce_ca...')
+#8 /var/www/html/wp-i
+
+2018-01-16T16:47:37+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /var/www/html/wp-content/themes/bellini/woocommerce/cart/cart.php:170
+Stack trace:
+#0 /var/www/html/wp-content/plugins/woocommerce/includes/wc-core-functions.php(209): include()
+#1 /var/www/html/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-cart.php(87): wc_get_template('cart/cart.php')
+#2 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(76): WC_Shortcode_Cart::output(Array)
+#3 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(89): WC_Shortcodes::shortcode_wrapper(Array)
+#4 /var/www/html/wp-includes/shortcodes.php(319): WC_Shortcodes::cart('', '', 'woocommerce_car...')
+#5 [internal function]: do_shortcode_tag(Array)
+#6 /var/www/html/wp-includes/shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ca...')
+#7 /var/www/html/wp-includes/class-wp-hook.php(286): do_shortcode('[woocommerce_ca...')
+#8 /var/www/html/wp-i
+
