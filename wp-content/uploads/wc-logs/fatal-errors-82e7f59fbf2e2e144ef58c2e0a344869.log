@@ -97,3 +97,55 @@ Stack trace:
 #7 /var/www/html/wp-includes/class-wp-hook.php(286): do_shortcode('[woocommerce_ca...')
 #8 /var/www/html/wp-i
 
+2018-01-22T14:36:18+00:00 CRITICAL Uncaught Error: Call to undefined method WooCommerce::add_error() in /var/www/html/wp-content/plugins/code-snippets/php/snippet-ops.php(517) : eval()'d code:65
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(286): my_custom_checkout_field_process('')
+#1 /var/www/html/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 /var/www/html/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#3 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-checkout.php(959): do_action('woocommerce_che...')
+#4 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php(290): WC_Checkout->process_checkout()
+#5 /var/www/html/wp-includes/class-wp-hook.php(286): WC_Form_Handler::checkout_action('')
+#6 /var/www/html/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#7 /var/www/html/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#8 /var/www/html/wp-settings.php(471): do_action('wp_loaded')
+#9 /var/www/html/wp-config.php(94): require_once(
+
+2018-01-22T14:37:22+00:00 CRITICAL Uncaught Error: Call to undefined method WooCommerce::add_error() in /var/www/html/wp-content/plugins/code-snippets/php/snippet-ops.php(517) : eval()'d code:65
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(286): my_custom_checkout_field_process('')
+#1 /var/www/html/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 /var/www/html/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#3 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-checkout.php(959): do_action('woocommerce_che...')
+#4 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php(290): WC_Checkout->process_checkout()
+#5 /var/www/html/wp-includes/class-wp-hook.php(286): WC_Form_Handler::checkout_action('')
+#6 /var/www/html/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#7 /var/www/html/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#8 /var/www/html/wp-settings.php(471): do_action('wp_loaded')
+#9 /var/www/html/wp-config.php(94): require_once(
+
+2018-01-22T14:37:55+00:00 CRITICAL Uncaught Error: Call to undefined method WooCommerce::add_error() in /var/www/html/wp-content/plugins/code-snippets/php/snippet-ops.php(517) : eval()'d code:65
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(286): my_custom_checkout_field_process('')
+#1 /var/www/html/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 /var/www/html/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#3 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-checkout.php(959): do_action('woocommerce_che...')
+#4 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php(290): WC_Checkout->process_checkout()
+#5 /var/www/html/wp-includes/class-wp-hook.php(286): WC_Form_Handler::checkout_action('')
+#6 /var/www/html/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#7 /var/www/html/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#8 /var/www/html/wp-settings.php(471): do_action('wp_loaded')
+#9 /var/www/html/wp-config.php(94): require_once(
+
+2018-01-22T14:38:04+00:00 CRITICAL Uncaught Error: Call to undefined method WooCommerce::add_error() in /var/www/html/wp-content/plugins/code-snippets/php/snippet-ops.php(517) : eval()'d code:65
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(286): my_custom_checkout_field_process('')
+#1 /var/www/html/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 /var/www/html/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#3 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-checkout.php(959): do_action('woocommerce_che...')
+#4 /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php(290): WC_Checkout->process_checkout()
+#5 /var/www/html/wp-includes/class-wp-hook.php(286): WC_Form_Handler::checkout_action('')
+#6 /var/www/html/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#7 /var/www/html/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#8 /var/www/html/wp-settings.php(471): do_action('wp_loaded')
+#9 /var/www/html/wp-config.php(94): require_once(
+
