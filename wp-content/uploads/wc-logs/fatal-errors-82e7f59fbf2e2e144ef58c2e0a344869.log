@@ -149,3 +149,16 @@ Stack trace:
 #8 /var/www/html/wp-settings.php(471): do_action('wp_loaded')
 #9 /var/www/html/wp-config.php(94): require_once(
 
+2018-02-07T12:12:10+00:00 CRITICAL Uncaught Error: Call to undefined function request_filesystem_credentials() in /var/www/html/wp-admin/includes/class-wp-upgrader-skin.php:93
+Stack trace:
+#0 /var/www/html/wp-admin/includes/class-automatic-upgrader-skin.php(47): WP_Upgrader_Skin->request_filesystem_credentials(false, '/var/www/html/', true)
+#1 /var/www/html/wp-admin/includes/class-wp-automatic-updater.php(144): Automatic_Upgrader_Skin->request_filesystem_credentials(false, '/var/www/html/', true)
+#2 /var/www/html/wp-admin/includes/update.php(85): WP_Automatic_Updater->should_update('core', Object(stdClass), '/var/www/html/')
+#3 /var/www/html/wp-includes/update.php(215): find_core_auto_update()
+#4 /var/www/html/wp-includes/class-wp-hook.php(286): wp_version_check()
+#5 /var/www/html/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#6 /var/www/html/wp-includes/plugin.php(515): WP_Hook->do_action(Array)
+#7 /var/www/html/wp-cron.php(126): do_action_ref_array('wp_version_chec...', Array)
+#8 {main}
+  thrown
+

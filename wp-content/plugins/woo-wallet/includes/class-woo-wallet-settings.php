@@ -1,9 +1,9 @@
 <?php
 
 /**
- * WC Qr codes settings
+ * Woo Wallet settings
  *
- * @author Bappa Mal
+ * @author Subrata Mal
  */
 if (!class_exists('Woo_Wallet_Settings')):
 
@@ -18,16 +18,22 @@ if (!class_exists('Woo_Wallet_Settings')):
          */
         public function __construct($settings_api) {
             $this->settings_api = $settings_api;
-
-            add_action('admin_init', array($this, 'admin_init'));
+            add_action('admin_init', array($this, 'plugin_settings_page_init'));
             add_action('admin_menu', array($this, 'admin_menu'), 60);
             add_action('admin_enqueue_scripts', array($this, 'admin_enqueue_scripts'));
         }
 
         /**
+         * wc wallet menu
+         */
+        public function admin_menu() {
+            add_submenu_page('woo-wallet', __('Settings', 'woo-wallet'), __('Settings', 'woo-wallet'), 'manage_woocommerce', 'woo-wallet-settings', array($this, 'plugin_page'));
+        }
+
+        /**
          * admin init 
          */
-        public function admin_init() {
+        public function plugin_settings_page_init() {
             //set the settings
             $this->settings_api->set_sections($this->get_settings_sections());
             foreach ($this->get_settings_sections() as $section) {
@@ -38,13 +44,6 @@ if (!class_exists('Woo_Wallet_Settings')):
             $this->settings_api->set_fields($this->get_settings_fields());
             //initialize settings
             $this->settings_api->admin_init();
-        }
-
-        /**
-         * wc wallet menu
-         */
-        public function admin_menu() {
-            add_submenu_page('woo-wallet', __('Settings', 'woo-wallet'), __('Settings', 'woo-wallet'), 'manage_woocommerce', 'woo-wallet-settings', array($this, 'plugin_page'));
         }
 
         /**
@@ -99,7 +98,7 @@ if (!class_exists('Woo_Wallet_Settings')):
                         'desc' => __('Enter wallet rechargeable product title', 'woo-wallet'),
                         'type' => 'text',
                         'default' => $this->get_rechargeable_product_title()
-                    )), $this->get_wc_tax_options(), array(
+                    )), $this->get_wc_tax_options(), $this->wp_menu_locations(), array(
                     array(
                         'name' => 'is_auto_deduct_for_partial_payment',
                         'label' => __('Auto deduct wallet balance for partial payment', 'woo-wallet'),
@@ -134,6 +133,12 @@ if (!class_exists('Woo_Wallet_Settings')):
                         'name' => 'cashback_amount',
                         'label' => __('Cashback Amount', 'woo-wallet'),
                         'desc' => __('Enter cashback amount', 'woo-wallet'),
+                        'type' => 'number',
+                    ),
+                    array(
+                        'name' => 'max_cashback_amount',
+                        'label' => __('Maximum Cashback Amount', 'woo-wallet'),
+                        'desc' => __('Enter maximum cashback amount', 'woo-wallet'),
                         'type' => 'number',
                     ),
                     array(
@@ -215,7 +220,7 @@ if (!class_exists('Woo_Wallet_Settings')):
          */
         public function get_wc_payment_gateways($context = 'field') {
             $gateways = array();
-            foreach (WC()->payment_gateways->payment_gateways() as $gateway) {
+            foreach (WC()->payment_gateways()->payment_gateways as $gateway) {
                 if ('yes' === $gateway->enabled && $gateway->id != 'wallet') {
                     $method_title = $gateway->get_title() ? $gateway->get_title() : __('(no title)', 'woo-wallet');
                     if ($context == 'field') {
@@ -240,7 +245,7 @@ if (!class_exists('Woo_Wallet_Settings')):
          */
         public function get_wc_payment_allowed_gateways($context = 'field') {
             $gateways = array();
-            foreach (WC()->payment_gateways->payment_gateways() as $gateway) {
+            foreach (WC()->payment_gateways()->payment_gateways as $gateway) {
                 if ('yes' === $gateway->enabled && $gateway->id != 'wallet') {
                     $method_title = $gateway->get_title() ? $gateway->get_title() : __('(no title)', 'woo-wallet');
                     if ($context == 'field') {
@@ -285,6 +290,27 @@ if (!class_exists('Woo_Wallet_Settings')):
                 );
             }
             return $tax_options;
+        }
+        /**
+         * get all registered nav menu locations settings
+         * @return array
+         */
+        public function wp_menu_locations() {
+            $menu_locations = array();
+            if (current_theme_supports('menus')) {
+                $locations = get_registered_nav_menus();
+                if ($locations) {
+                    foreach ($locations as $location => $title) {
+                        $menu_locations[] = array(
+                            'name' => $location,
+                            'label' => (current($locations) == $title) ? __('Mini wallet display location', 'woo-wallet') : '',
+                            'desc' => $title,
+                            'type' => 'checkbox'
+                        );
+                    }
+                }
+            }
+            return $menu_locations;
         }
 
         /**

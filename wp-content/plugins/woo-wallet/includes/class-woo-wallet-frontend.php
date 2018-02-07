@@ -43,6 +43,10 @@ if (!class_exists('Woo_Wallet_Frontend')) {
             if (apply_filters('woo_wallet_hide_nav_menu', false, $menu, $args) || in_array($args->theme_location, apply_filters('woo_wallet_exclude_nav_menu_location', array(), $menu, $args))) {
                 return $menu;
             }
+            
+            if('off' === woo_wallet()->settings_api->get_option($args->theme_location, '_wallet_settings_general', 'off')){
+                return $menu;
+            }
 
             ob_start();
             woo_wallet()->get_template('mini-wallet.php');
@@ -215,7 +219,7 @@ if (!class_exists('Woo_Wallet_Frontend')) {
             if (get_wallet_cashback_amount() && !is_wallet_rechargeable_order(wc_get_order($order_id))) {
                 update_post_meta($order_id, '_wallet_cashback', get_wallet_cashback_amount());
             }
-            if (!is_full_payment_through_wallet() && ((isset($_POST['partial_pay_through_wallet']) && !empty($_POST['partial_pay_through_wallet'])) || 'on' === woo_wallet()->settings_api->get_option('is_auto_deduct_for_partial_payment', '_wallet_settings_general'))) {
+            if (!is_full_payment_through_wallet() && ((isset($_POST['partial_pay_through_wallet']) && !empty($_POST['partial_pay_through_wallet'])) || 'on' === woo_wallet()->settings_api->get_option('is_auto_deduct_for_partial_payment', '_wallet_settings_general')) && !is_wallet_rechargeable_order(wc_get_order($order_id))) {
                 $current_wallet_balance = woo_wallet()->wallet->get_wallet_balance(get_current_user_id(), '');
                 update_post_meta($order_id, '_original_order_amount', $order->get_total(''));
                 $order->set_total($order->get_total('') - $current_wallet_balance);
@@ -273,6 +277,7 @@ if (!class_exists('Woo_Wallet_Frontend')) {
                 update_post_meta($order_id, '_coupon_cashback_amount', $discount_total);
             }
         }
+
         /**
          * Display cashback amount in product
          * @global type $post
@@ -303,10 +308,12 @@ if (!class_exists('Woo_Wallet_Frontend')) {
                             $cashback_type = 'fixed';
                         }
                     }
-                    if ('percent' === $cashback_type) {
-                        echo '<span class="on-woo-wallet-cashback">' . $cashback_amount . '% ' . __('Cashback', 'woo-wallet') . '</span>';
-                    } else {
-                        echo '<span class="on-woo-wallet-cashback">' . wc_price($cashback_amount) . __(' Cashback', 'woo-wallet') . '</span>';
+                    if ($cashback_amount) {
+                        if ('percent' === $cashback_type) {
+                            echo '<span class="on-woo-wallet-cashback">' . $cashback_amount . '% ' . __('Cashback', 'woo-wallet') . '</span>';
+                        } else {
+                            echo '<span class="on-woo-wallet-cashback">' . wc_price($cashback_amount) . __(' Cashback', 'woo-wallet') . '</span>';
+                        }
                     }
                 }
             }
